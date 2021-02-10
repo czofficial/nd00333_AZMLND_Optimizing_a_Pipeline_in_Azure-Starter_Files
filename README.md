@@ -48,7 +48,7 @@ VotingEnsemble Algorithm:\
 Ensembled_algorithms : ['XGBoostClassifier', 'XGBoostClassifier', 'LightGBM', 'XGBoostClassifier', 'LogisticRegression', 'RandomForest', 'RandomForest']\
 Ensemble_weights : [0.14285714285714285, 0.07142857142857142, 0.2857142857142857, 0.21428571428571427, 0.07142857142857142, 0.07142857142857142, 0.14285714285714285]
 
-Final Model Metric:\
+Final model metric:\
 Accuracy: 0.91603
 
 ## Pipeline comparison
