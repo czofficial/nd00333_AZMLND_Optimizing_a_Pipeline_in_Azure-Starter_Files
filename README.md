@@ -29,13 +29,13 @@ LogisticRegression (sklearn.linear_model)\
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html 
 
 Hyperparameter Tuning via HyperDrive:\
-'3.' Primary metric to optimse: Accuracy\
+3. Primary metric to optimse: Accuracy\
 3.1 Parameter space / hyperparameters to optimise: regularization strength between 0 and 1 and max iterations of 10, 50 or 100
 
-What are the benefits of the chosen parameter sampler?\
+- What are the benefits of the chosen parameter sampler?\
 RandomParameterSampling is optimised for speed because it picks randomly hyperparameter values instead of going though every single value, i.e., it allows to achieve an optimal primary metric for a relatively short period of time.
 
-What are the benefits of the chosen early stopping policy?\
+- What are the benefits of the chosen early stopping policy?\
 Bandit Policy terminates runs which fall outside of the top n% range every k interval, saving time of the experiment. In this case, any run whose best metric is less than (1/(1+0.1) or 91% of the best performing run will be terminated.
 
 Final model metrics:\
