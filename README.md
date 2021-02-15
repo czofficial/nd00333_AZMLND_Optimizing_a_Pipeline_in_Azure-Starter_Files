@@ -96,3 +96,7 @@ HyperDrive and AutoML performed equally well in terms of accuracy. Unlike AutoML
 Data guardrails are run by AutoML when automatic featurization is enabled. This is a sequence of checks over the input data to ensure high quality data is being used to train models. In this case, imbalanced classes were detected in the dataset by AutoML, which could lead to a falsely perceived positive effect of a model's accuracy because the input data has bias towards one class.
 
 One way of dealing with this imbalance could be using a performance metric that deals better with imbalanced data. For example, the AUC_weighted is a primary metric that calculates the contribution of every class based on the relative number of samples representing that class, hence is more robust against imbalance. Another one would be the F1 score. However, the correct way would be to resample the input data to even the class imbalance, either by up-sampling the smaller classes or down-sampling the larger classes.
+
+## Instance
+**Deletion of instance**
+![delete-instance](./delete-instance)\
