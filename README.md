@@ -78,11 +78,42 @@ In the case of this project, the Voting Ensemble algorithm performed best with a
 
 As a side fact: Out of 15 total runs, Random Forest (including MaxAbsScalar featurization; scales each feature by its maximum absolute value) performed worst with an accuracy of only 0.79176.
 
+**AutoML Configuration**\
+automl_config = AutoMLConfig(\
+    experiment_timeout_minutes=15,\
+    task='classification',\
+    primary_metric='accuracy',\
+    training_data=train_total,\
+    label_column_name='y',\
+    n_cross_validations=4)\
+
 **VotingEnsemble Algorithm:**\
 **Ensembled_algorithms:** ['LightGBM', 'XGBoostClassifier', 'XGBoostClassifier', 'XGBoostClassifier', 'LogisticRegression', 'RandomForest', 'RandomForest', 'RandomForest']\
 **Ensemble_weights:** [0.35714285714285715, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.14285714285714285, 0.14285714285714285]
 
 As one can see, the highest weight of the ensemble was given to the LightGBM algorithm. LightGBM is a gradient boosting framework that uses tree based learning algorithms. Boosting is an ensemble method for improving the model predictions of any given learning algorithm. The idea of boosting is to train weak learners sequentially, each trying to correct its predecessor. The Gradient Boosting Method tries to fit the new predictor to the residual errors made by the previous predictor. By combining weak learner after weak learner, the final model is able to account for a lot of the error from the original model and reduces this error over time.
+
+**VotingEnsemble: Hyperparameter**\
+                ('prefittedsoftvotingclassifier',...\
+                                                                                                    min_samples_split=0.2442105263157895,\
+                                                                                                    min_weight_fraction_leaf=0.0,\
+                                                                                                    n_estimators=10,\
+                                                                                                    n_jobs=1,\
+                                                                                                    oob_score=False,\
+                                                                                                    random_state=None,\
+                                                                                                    verbose=0,\
+                                                                                                    warm_start=False))],\
+                                                                     verbose=False))],\
+                                               flatten_transform=None,\
+                                               weights=[0.35714285714285715,
+                                                        0.07142857142857142,
+                                                        0.07142857142857142,
+                                                        0.07142857142857142,
+                                                        0.07142857142857142,
+                                                        0.07142857142857142,
+                                                        0.14285714285714285,
+                                                        0.14285714285714285]))],\
+         verbose=False)
 
 **Final model metric:**\
 Accuracy: 0.91708
