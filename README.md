@@ -99,4 +99,7 @@ One way of dealing with this imbalance could be using a performance metric that 
 
 ## Instance
 **Deletion of instance**
-![delete-instance](./delete-instance.png)\
+Two ways of compute instance deletion possible:
+![delete-instance2](./delete-instance2.png)
+or\
+![delete-instance](./delete-instance.png)
