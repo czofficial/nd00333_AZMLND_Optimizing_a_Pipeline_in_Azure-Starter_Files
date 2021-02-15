@@ -49,7 +49,7 @@ RandomParameterSampling defines random sampling over a hyperparameter search spa
 
 Early termination policy automatically terminates poorly performing runs with an early termination policy, hence improves computational efficiency. Bandit Policy terminates runs which fall outside of the top n% range every k interval, saving time of the experiment. In this project, any run whose best metric is less than (1/(1+0.1) or 91% of the best performing run will be terminated. Microsoft recommends for a conservative policy that provides savings without terminating promising jobs, consider a Median Stopping Policy. For more aggressive savings, use Bandit Policy. In other words, Bandit Policy saves time and resources.
 
-**Final model metric:**\
+**Final Model Metric:**\
 Accuracy: 0.91296\
 Max iterations: 100\
 Regularization Strength: 0.95150
@@ -85,7 +85,7 @@ automl_config = AutoMLConfig(\
     primary_metric='accuracy',\
     training_data=train_total,\
     label_column_name='y',\
-    n_cross_validations=4)\
+    n_cross_validations=4)
 
 **VotingEnsemble Algorithm:**\
 **Ensembled_algorithms:** ['LightGBM', 'XGBoostClassifier', 'XGBoostClassifier', 'XGBoostClassifier', 'LogisticRegression', 'RandomForest', 'RandomForest', 'RandomForest']\
@@ -111,9 +111,9 @@ As one can see, the highest weight of the ensemble was given to the LightGBM alg
                                                         0.07142857142857142,
                                                         0.07142857142857142,
                                                         0.14285714285714285,
-                                                        0.14285714285714285],\
+                                                        0.14285714285714285]
 
-**Final model metric:**\
+**Final Model Metric:**\
 Accuracy: 0.91708
 
 ## Comparison
@@ -127,7 +127,7 @@ Data guardrails are run by AutoML when automatic featurization is enabled. This 
 One way of dealing with this imbalance could be using a performance metric that deals better with imbalanced data. For example, the AUC_weighted is a primary metric that calculates the contribution of every class based on the relative number of samples representing that class, hence is more robust against imbalance. Another one would be the F1 score. However, the correct way would be to resample the input data to even the class imbalance, either by up-sampling the smaller classes or down-sampling the larger classes.
 
 ## Instance
-**Deletion of instance**\
+**Deletion of Instance**\
 Two ways of compute instance deletion possible:\
 First way:\
 ![delete-instance2](./delete-instance01.png)
