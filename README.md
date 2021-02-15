@@ -35,12 +35,14 @@ LogisticRegression (sklearn.linear_model)\
 [Link to scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html).
 
 **Hyperparameter Tuning via HyperDrive:**\
-3. Primary metric to optimse: Accuracy\
-3.1 Parameter space / hyperparameters to optimise: regularization strength between 0 and 1 and max iterations of 10, 50 or 100
+3. Primary metric to optimse: Accuracy.\
+3.1 Parameter space / hyperparameters to optimise: regularization strength between 0 and 1 (C) & maximum iterations of 10, 50 or 100 (max_iter).
+
+The parameter sampler helps to find the optimal hyperparameters by randomly sampling combinations of them. The regularization strength hyperparameter (C) is set to ensure that our model does not overfit the data by penalizing addition of features. The maximum iteration hyperparameter (max_iter) controls the number of iterations to be done before we select our final model.
 
 - What are the benefits of the chosen parameter sampler?\
 
-RandomParameterSampling is optimised for speed because it picks randomly hyperparameter values instead of going though every single value, i.e., it allows to achieve an optimal primary metric for a relatively short period of time.
+RandomParameterSampling defines random sampling over a hyperparameter search space. It is optimised for speed because it picks randomly hyperparameter values instead of going though every single value, i.e., it allows to achieve an optimal primary metric for a relatively short period of time.
 
 - What are the benefits of the chosen early stopping policy?\
 
@@ -85,7 +87,7 @@ As one can see, the highest weight of the ensemble was given to the LightGBM alg
 Accuracy: 0.91708
 
 ## Comparison
-HyperDrive and AutoML performed equally well in terms of accuracy. Unlike AutoML, which generates ensemble models (combination of multiple models), HyperDrive sticks with one algorithm only (logistic regression). Whereas HyperDrive tunes hyperparamters only, AutoML selects different estimators, engineers different features and chooses different hypterparameters all at once. 
+HyperDrive and AutoML performed equally well in terms of accuracy. Unlike AutoML, which generates ensemble models (combination of multiple models), HyperDrive sticks with one algorithm only (logistic regression). Whereas HyperDrive tunes hyperparamters only, AutoML selects different estimators, engineers different features and chooses different hypterparameters all at once. Keeping that in mind, it is somewhat suprising how well the Logistic Regression (HyperDrive) performed.
 
 ## Improvements
 - Imbalanced data handeling
