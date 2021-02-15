@@ -98,8 +98,9 @@ Data guardrails are run by AutoML when automatic featurization is enabled. This 
 One way of dealing with this imbalance could be using a performance metric that deals better with imbalanced data. For example, the AUC_weighted is a primary metric that calculates the contribution of every class based on the relative number of samples representing that class, hence is more robust against imbalance. Another one would be the F1 score. However, the correct way would be to resample the input data to even the class imbalance, either by up-sampling the smaller classes or down-sampling the larger classes.
 
 ## Instance
-**Deletion of instance**
-Two ways of compute instance deletion possible:
+**Deletion of instance**\
+Two ways of compute instance deletion possible:\
+First way:\
 ![delete-instance2](./delete-instance2.png)
-or\
+Second way:\
 ![delete-instance](./delete-instance.png)
